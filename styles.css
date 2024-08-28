@@ -1,0 +1,309 @@
+/* Algemene stijlen */
+body {
+    background-color: #01161eff; /* Rich Black */
+    color: #eff6e0ff; /* Beige */
+    font-family: 'Poppins', sans-serif; /* Consistent lettertype overal */
+    margin: 0;
+    padding: 0;
+    line-height: 1.7; /* Verbeterde leesbaarheid */
+    font-size: 16px; /* Basistekstgrootte */
+    -webkit-font-smoothing: antialiased; /* Gladstrijken van tekst voor een scherpere uitstraling */
+}
+
+/* Typografie */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Consistent lettertype voor koppen */
+    color: #eff6e0ff; /* Beige */
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem; /* Iets grotere tekst voor betere leesbaarheid */
+    color: #aec3b0ff; /* Ash Gray */
+}
+
+/* Responsieve Typografie */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Navigatiebalk */
+.navbar {
+    background-color: #01161eff; /* Rich Black */
+    padding: 1rem 2rem; /* Minder padding voor een minimalistische uitstraling */
+    box-shadow: 0 4px 15px rgba(1, 22, 30, 0.8); /* Meer opvallende schaduw */
+    position: fixed; /* Vastzetten van de taakbalk bovenaan */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 0; /* Verwijdering van de ronde hoeken voor een minimalistisch ontwerp */
+    display: flex; /* Voeg flexbox toe */
+    justify-content: center; /* Centreer de inhoud horizontaal */
+}
+
+.navbar-brand {
+    font-weight: 500; /* Minder nadrukkelijk lettertypegewicht */
+    font-size: 1.5rem; /* Kleiner lettertype */
+    color: #eff6e0ff !important; /* Lichtgroene kleur */
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #eff6e0ff; /* Lichtbeige kleur bij hover */
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 20px; /* Iets minder ruimte tussen de links voor een compactere uitstraling */
+    margin-left: auto;
+}
+
+.nav-link {
+    font-weight: 400; /* Minder nadrukkelijk lettertypegewicht */
+    font-size: 1rem; /* Kleiner lettertype */
+    color: #aec3b0ff !important; /* Lichtgroene kleur */
+    transition: color 0.3s, background-color 0.3s;
+    padding: 0.5rem 1rem; /* Minder padding voor een minimalistische uitstraling */
+    border-radius: 30px;
+    text-align: center;
+}
+
+.nav-link:hover {
+    color: #01161eff !important;
+    background-color: #eff6e0ff !important; /* Verander naar lichtbeige bij hover */
+}
+
+/* Lijstitems */
+.list-group-item {
+    color: #01161eff;
+    background-color: #aec3b0ff;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(1, 22, 30, 0.6); /* Grotere schaduw voor meer diepte */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    flex-wrap: wrap;
+}
+
+.list-group-item:hover {
+    background-color: #598392ff;
+    box-shadow: 0 10px 30px rgba(1, 22, 30, 0.8); /* Diepere schaduw bij hover */
+}
+
+.list-group-item strong {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.list-group-item span {
+    color: #01161eff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Knoppen */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center; /* Centreer knoppen per twee in de container */
+}
+
+.btn-group .btn {
+    flex: 1 1 calc(50% - 15px); /* Zorgt ervoor dat knoppen per twee naast elkaar staan */
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(1, 22, 30, 0.4); /* Schaduw op knoppen */
+    max-width: calc(50% - 15px); /* Zorgt voor consistente breedte */
+}
+
+.btn-group .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(1, 22, 30, 0.6); /* Verhoogde schaduw bij hover */
+}
+
+.btn-primary {
+    background-color: #124559ff;
+    color: #eff6e0ff;
+}
+
+.btn-primary:hover {
+    background-color: #01161eff;
+}
+
+.btn-danger {
+    background-color: #598392ff;
+    color: #eff6e0ff;
+}
+
+.btn-danger:hover {
+    background-color: #124559ff;
+}
+
+/* Secties */
+h2, h3 {
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.container > .row + .row {
+    margin-top: 40px;
+}
+
+.content-section {
+    padding: 3rem 0;
+}
+
+/* Content Ideeën Tiles */
+#contentIdeasOverview {
+    display: flex;
+    flex-wrap: wrap; /* Laat de tegels doorlopen op de volgende regel als ze niet passen */
+    justify-content: flex-start; /* Zorgt ervoor dat de tegels aan de linkerkant beginnen */
+    gap: 15px; /* Ruimte tussen de tegels */
+}
+
+#contentIdeasOverview .card {
+    background-color: #124559ff !important;
+    color: #eff6e0ff !important;
+    border-radius: 10px;
+    text-align: center;
+    width: calc(25% - 15px); /* Laat vier tegels per rij zien, ruimte inbegrepen */
+    min-width: 120px; /* Minimale breedte van de tegels */
+    margin-bottom: 15px;
+    box-shadow: 0 6px 20px rgba(18, 69, 89, 0.6); /* Meer opvallende schaduw */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contentIdeasOverview .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(18, 69, 89, 0.8); /* Verhoogde schaduw bij hover */
+}
+
+#contentIdeasOverview .card-title {
+    font-size: 0.9rem; /* Kleinere tekstgrootte voor subtielere uitstraling */
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Hoofdpagina Kaarten */
+.card {
+    border: none;
+    border-radius: 12px;
+    background-color: #124559ff;
+    color: #eff6e0ff;
+    box-shadow: 0 6px 20px rgba(1, 22, 30, 0.5); /* Grotere schaduw voor meer diepte */
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(1, 22, 30, 0.7); /* Diepere schaduw bij hover */
+}
+
+.card-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #aec3b0ff;
+}
+
+/* Buttons op de hoofdpagina */
+.btn-primary {
+    background-color: #598392ff;
+    border: none;
+    color: #eff6e0ff;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(1, 22, 30, 0.4); /* Schaduw op knoppen */
+}
+
+.btn-primary:hover {
+    background-color: #01161eff;
+    color: #eff6e0ff;
+    box-shadow: 0 6px 20px rgba(1, 22, 30, 0.6); /* Verhoogde schaduw bij hover */
+}
+
+/* Containers */
+.container {
+    max-width: 1200px;
+    padding: 0 2rem;
+    margin-top: 80px; /* Zorg voor ruimte onder de vastgezette navigatiebalk */
+}
+
+/* Gecentreerde tekst */
+.text-center {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Responsieve grid voor de kaarten */
+@media (max-width: 768px) {
+    #contentIdeasOverview .card {
+        width: calc(50% - 15px); /* Twee tegels per rij op kleinere schermen */
+    }
+
+    .btn-group .btn {
+        max-width: calc(100% - 15px); /* Knoppen nemen volledige breedte in op kleinere schermen */
+    }
+}
+
+@media (max-width: 576px) {
+    #contentIdeasOverview .card {
+        width: 100%; /* Een tegel per rij op zeer kleine schermen */
+    }
+
+    .btn-group .btn {
+        max-width: 100%; /* Knoppen nemen volledige breedte in op zeer kleine schermen */
+    }
+}

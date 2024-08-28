@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistack Online Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Voeg Chart.js toe voor grafieken -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Artistack Online</a>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+
+                <!-- Canvas elementen voor de grafieken -->
+                <h3>Studio Time Overview</h3>
+                <canvas id="studioTimeChart" width="400" height="200"></canvas>
+
+                <h3>Leads Overview</h3>
+                <canvas id="leadsChart" width="400" height="200"></canvas>
+
+                <h3>Content Ideas Overview</h3>
+                <div id="contentIdeasOverview" class="row mb-4"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-dark text-white text-center mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Leads</h3>
+                        <p class="card-text">Manage your leads and contacts.</p>
+                        <a href="leads.html" class="btn btn-primary">Go to Leads</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white text-center mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Content Plan</h3>
+                        <p class="card-text">Plan your content and social media posts.</p>
+                        <a href="content_plan.html" class="btn btn-primary">Go to Content Plan</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white text-center mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Studio Time</h3>
+                        <p class="card-text">Log and review your studio time.</p>
+                        <a href="studio_time.html" class="btn btn-primary">Go to Studio Time</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript sectie voor het ophalen van gebruikersinformatie -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const userId = localStorage.getItem('currentLoggedInUserID');
+        console.log('Current user ID:', userId);
+
+        if (userId) {
+            const { data, error } = await supabase
+                .from('users')
+                .select('name, dashboardInfo')
+                .eq('id', userId)
+                .single();
+
+            if (error) {
+                console.error('Error fetching user data:', error);
+            } else {
+                document.getElementById('welcomeMessage').textContent = `Welkom, ${data.name}!`;
+                document.getElementById('dashboardInfo').textContent = data.dashboardInfo;
+            }
+        } else {
+            document.getElementById('welcomeMessage').textContent = 'Geen gebruiker ingelogd.';
+            document.getElementById('dashboardInfo').textContent = '';
+        }
+    });
+</script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
